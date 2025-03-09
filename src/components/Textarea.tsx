@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import Warning from "./Warning";
 
-export default function Textarea() {
-  const [text, setText] = useState("");
+interface TextareaProps {
+  text: string;
+  setText: Dispatch<SetStateAction<string>>;
+}
+
+export default function Textarea({ text, setText }: TextareaProps) {
   const [warningText, setWarningText] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
