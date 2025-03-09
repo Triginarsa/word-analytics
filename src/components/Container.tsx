@@ -11,7 +11,7 @@ export default function Container() {
 
   const stats = {
     numberOfCharacters: text.length,
-    numberOfWords: text.split(" ").length,
+    numberOfWords: text.split(/\s/).filter((word) => word != "").length,
     numberOfInstagramLeft: INSTAGRAM_MAX_CHARACTERS - text.length,
     numberOfFacebookLeft: FACEBOOK_MAX_CHARACTERS - text.length,
   };
